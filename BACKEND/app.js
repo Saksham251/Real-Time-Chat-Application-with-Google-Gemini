@@ -5,7 +5,7 @@ import cookieParser from "cookie-parser";
 import connect from "./db/mongodb.js";
 import cors from "cors";
 import userRoutes from './routes/user.routes.js';
-// import projectRoutes from './routes/project.routes.js';
+import projectRoutes from './routes/project.routes.js';
 // import aiRoutes from './routes/ai.routes.js';
 const app = express();
 dotenv.config();
@@ -20,15 +20,7 @@ connect();
 
 
 app.use('/users', userRoutes);
-// app.use('/projects', projectRoutes);
+app.use('/projects', projectRoutes);
 // app.use("/ai", aiRoutes);
-
-
-
-
-
-app.get("/",(req,res)=>{
-    res.send("Hello World");
-});
 
 export default app;

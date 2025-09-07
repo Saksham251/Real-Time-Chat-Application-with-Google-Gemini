@@ -27,4 +27,8 @@ routes.get("/logout",
     userController.logoutController
 );
 
+routes.get("/all-users",
+    authMiddleware.authUser,
+    userController.getAllUsersController
+);
 export default routes;
